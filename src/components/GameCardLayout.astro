@@ -1,0 +1,38 @@
+---
+interface Props {
+  gameCardDetails: {
+    refLink: string;
+    poster: string;
+    lazyLoadPosterImg: boolean;
+    name: string;
+    description: string;
+  };
+}
+
+const {
+  gameCardDetails = {
+    refLink: "#",
+    poster: "",
+    lazyLoadPosterImg: false,
+    name: "Course Name",
+    description: "Course Description",
+  },
+} = Astro.props;
+---
+
+<a href={gameCardDetails.refLink} class="course-card">
+  <img
+    class="w-full h-auto mb-2"
+    src={gameCardDetails.poster}
+    alt="course-logo"
+    decoding="async"
+    loading={gameCardDetails.refLink ? "lazy" : undefined}
+  />
+  <h4 class="course-card-heading" style="white-space: pre-wrap;">
+    {gameCardDetails.name}
+  </h4>
+  <!-- <hr class="course-card-border" /> -->
+  <p class="course-card-desc">
+    {gameCardDetails.description}
+  </p>
+</a>

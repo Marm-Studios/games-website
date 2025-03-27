@@ -1,0 +1,46 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import GameCardLayout from "../components/GameCardLayout.astro";
+
+const metadata = {
+  title:
+    "Games - Marm Studios",
+  description:
+    "Learn top computer courses at V.Vidhya in Surat. From programming to graphic design, boost your skills and indulge your creativity to do real work with the help of technology.",
+};
+
+const gameCardDetails = {
+  refLink: "/games/jumper/",
+  poster: "/images/game-posters/jump-game.png",
+  lazyLoadPosterImg: false,
+  name: "Jumper",
+  description: "Reach the end destination by jumping over obstacles in the least number possible...",
+};
+---
+
+<BaseLayout
+  metadata={metadata}
+  includeLottieAnimScript={true}
+  navSection="home"
+>
+  <main
+    class="mx-auto my-20 px-5 max-w-mdsm sm:max-w-lg md:max-w-2xl lg:max-w-4xl 2xl:max-w-6xl"
+  >
+    <section>
+      <h2
+        class="text-center text-font-color-green text-3xl md:text-5xl font-extrabold mb-10"
+      >
+        Games
+      </h2>
+    </section>
+
+    <section class="mb-20">
+      <div class="course-card-grid">
+        <!-- <slot name="longterm-courses-slot" /> -->
+         <GameCardLayout {gameCardDetails}>
+         </GameCardLayout>
+      </div>
+    </section>
+  </section>
+  </main>
+</BaseLayout>

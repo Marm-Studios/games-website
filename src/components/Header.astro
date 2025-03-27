@@ -1,0 +1,147 @@
+---
+import SocialLinks from "./SocialLinks.astro";
+
+const { navSection } = Astro.props;
+---
+
+<header class="header">
+  <a href="/">
+    <!-- <img
+        class="h-9 sm:h-12 md:h-16 lg:h-18 w-auto pr-0.5 md:pr-2"
+        src="/images/med-logo.png"
+        alt="full-logo"
+      /> -->
+
+    <div class="flex flex-row items-center gap-1 md:gap-2">
+      <h2 class="header-logo-text">Marm Studios</h2>
+    </div>
+  </a>
+
+  <button
+    id="topbar-menu-btn"
+    name="close"
+    class="text-2xl cursor-pointer mx-2 flex justify-center items-center sm:hidden"
+    aria-label="Toggle Navigation Menu"
+  >
+    <svg
+      data-state="open"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 448 512"
+      class="util-icon"
+      fill="currentColor"
+      stroke="currentColor"
+      stroke-width="15"
+      aria-hidden="true"
+    >
+      <path
+        d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"
+      ></path></svg
+    >
+    <svg
+      data-state="close"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 384 512"
+      name="open"
+      class="util-icon"
+      fill="currentColor"
+      stroke="currentColor"
+      stroke-width="30"
+      style="display: none;"
+      aria-hidden="true"
+    >
+      <path
+        d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+      ></path></svg
+    >
+  </button>
+
+  <!-- <div
+    class="topbar-menu bg-navbar-color-pri sm:flex z-10 sm:z-auto absolute sm:static box-border sm:box-content h-dvh sm:h-auto w-full sm:w-auto left-[-640px] top-[50px] opacity-0 sm:opacity-100 transition-all ease-in duration-200"
+  >
+    <nav
+      class="flex flex-col items-start sm:items-stretch gap-3 sm:gap-0 sm:flex-row sm:space-x-2 md:space-x-4 font-bold text-base md:text-xl mt-10 sm:mt-0 mx-4 sm:mx-0"
+    >
+      <a
+        href="/"
+        class={`flex items-center header-navmenu-hover ${
+          navSection === "home"
+            ? "underline"
+            : "link-interaction-underline-effect"
+        }`}
+      >
+        Home
+      </a>
+      <a
+        href="/about/"
+        class={`flex items-center header-navmenu-hover ${
+          navSection === "about"
+            ? "underline"
+            : "link-interaction-underline-effect"
+        }`}
+      >
+        About
+      </a>
+      <div class="sm:relative group">
+        <span
+          name="close"
+          class={`submenu-trigger h-full flex flex-row items-center cursor-pointer header-navmenu-hover ${
+            navSection === "courses"
+              ? "underline"
+              : "link-interaction-underline-effect"
+          }`}
+        >
+          Courses
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 320 512"
+            class="util-icon"
+            fill="currentColor"
+            stroke="currentColor"
+            stroke-width="15"
+          >
+            <path
+              d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"
+            ></path></svg
+          >
+        </span>
+        <div
+          class="sub-menu hidden sm:absolute flex-col gap-4 bg-navbar-color-pri rounded-md py-3 pl-5 sm:pt-6 sm:pb-4 sm:px-6 min-w-max sm:right-0"
+        >
+          <a href="/courses/" class="link-interaction-effect">All Courses</a>
+          <a href="/courses/multimedia/" class="link-interaction-effect"
+            >Multimedia Courses</a
+          >
+          <a href="/courses/programming/" class="link-interaction-effect"
+            >Programming Courses</a
+          >
+          <a href="/courses/kids/" class="link-interaction-effect"
+            >Kids Courses</a
+          >
+          <a href="/courses/literacy/" class="link-interaction-effect"
+            >Literacy Courses</a
+          >
+        </div>
+      </div>
+      <a
+        href="/contact/"
+        class={`flex items-center header-navmenu-hover ${
+          navSection === "contact"
+            ? "underline"
+            : "link-interaction-underline-effect"
+        }`}
+      >
+        Contact
+      </a>
+    </nav>
+
+    <div
+      class="box-border sm:box-content w-full sm:w-auto px-2 sm:px-0 sm:hidden fixed bottom-20 text-xl"
+    >
+      <hr class="side-navmenu-border" />
+
+      <div class="flex items-center space-x-4 px-4">
+        <SocialLinks />
+      </div>
+    </div>
+  </div> -->
+</header>

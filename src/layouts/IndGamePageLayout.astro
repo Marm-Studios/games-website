@@ -1,0 +1,36 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+
+interface Props {
+  metadata: {
+    title: string;
+    description: string;
+  };
+  navSection: string;
+
+  gameDetails: {
+    name: string;
+    gameRefLink: string;
+  };
+}
+
+const { metadata, navSection, gameDetails } = Astro.props;
+---
+
+<BaseLayout metadata={metadata} navSection={navSection}>
+  <main class="ind-course-main-section w-full">
+    <section class="flex flex-col justify-center items-center w-full">
+      <h2 class="ind-course-heading">{gameDetails.name}</h2>
+
+      <div class="w-[960px] h-auto aspect-w-16 aspect-h-9">
+        <iframe
+          src={gameDetails.gameRefLink}
+          class="game-frame"
+          title="game"
+          allowfullscreen="true"
+          scrolling="no"
+        ></iframe>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
