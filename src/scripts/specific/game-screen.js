@@ -5,8 +5,6 @@ function isTouchScreen() {
 function updateControlsPanel() {
   const controlsPanel = document.getElementById("controls-panel");
 
-  console.log(controlsPanel);
-
   if (!controlsPanel) return;
 
   if (isTouchScreen() && window.innerWidth < 1024) {
@@ -18,8 +16,6 @@ function updateControlsPanel() {
 
 function updateOrientationOverlay() {
   const overlay = document.getElementById("orientation-overlay");
-
-  console.log(overlay);
 
   if (!overlay) return;
 
@@ -35,7 +31,7 @@ window.addEventListener("resize", updateOrientationOverlay);
 window.addEventListener("orientationchange", updateOrientationOverlay);
 updateOrientationOverlay();
 
-updateControlsPanel();
+// updateControlsPanel();
 // window.addEventListener("resize", updateControlsPanel);
 // window.addEventListener("orientationchange", updateControlsPanel);
 

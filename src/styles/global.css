@@ -515,4 +515,13 @@
     /* min-height: 100%; */
     /* width: 1px; */
   }
+
+  .gamescreen-control-btn {
+    /* @apply transition-all hidden fixed justify-center items-center cursor-pointer bottom-4 right-4 z-[5] w-10 h-10 rounded-full bg-font-color-sec text-font-color-white hover:text-font-color-pri; */
+    @apply cursor-pointer transition-all  hover:text-font-color-sec active:text-font-color-sec;
+  }
+
+  .gamescreen-control-btn.touch {
+    @apply text-font-color-sec;
+  }
 }
