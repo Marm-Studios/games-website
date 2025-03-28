@@ -493,6 +493,10 @@
     @apply text-font-color-red-dark;
   }
 
+  .game-frame-container {
+    contain: layout paint;
+  }
+
   .game-frame {
     @apply overflow-hidden w-full h-full;
     /* flex-grow: 1; */
@@ -501,9 +505,11 @@
     padding: 0;
     /* position: relative; */
     /* transform-origin: bottom left; */
+    transform: translate3d(0, 0, 0);
     transform: scale3d(1, 1, 1);
-    transition: transform 0.3s ease-in;
+    /* transition: transform 0.3s ease-in; */
     will-change: transform;
+    backface-visibility: hidden;
     /* height: 1px; */
     /* min-width: 100%; */
     /* min-height: 100%; */

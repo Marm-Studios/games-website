@@ -22,14 +22,15 @@ const { metadata, navSection, gameDetails } = Astro.props;
     <section class="flex flex-col justify-center items-center w-full">
       <h2 class="ind-course-heading">{gameDetails.name}</h2>
 
-      <div class="w-[960px] h-auto aspect-w-16 aspect-h-9">
+      <div
+        class="game-frame-container w-[320px] sm:w-[480px] md:w-[640px] lg:w-[960px] h-auto aspect-[16/9]"
+      >
         <iframe
           src={gameDetails.gameRefLink}
           class="game-frame"
           title="game"
           allowfullscreen="true"
-          scrolling="no"
-        ></iframe>
+          scrolling="no"></iframe>
       </div>
     </section>
   </main>
